@@ -81,7 +81,7 @@ if __name__ == "__main__":
     image_processor = get_image_processor(model_path)
     model = get_model(model_path)
     
-    # adjust gard_acc_steps based on available compute resource
+    # adjust gradient_accumulation_steps based on available compute resource
     training_args = TrainingArguments(
                                         f"{model_path}-finetuned-thcr",
                                         remove_unused_columns=False,
