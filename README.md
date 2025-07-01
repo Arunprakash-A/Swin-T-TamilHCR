@@ -2,15 +2,15 @@
 This repository contains all the necessary files to reproduce the results presented in the paper "<b>Robust Tamil Handwritten Character Recognition using Vision Transformers.</b>" Follow the instructions below to set up the environment and run the experiments.
 
 ## Set up the environment
- - We recommend using `conda` to setup up the python environment
- - DDownload the Anaconda distribution specific to your operating system (we used Ubuntu) from [link](https://www.anaconda.com/download/success)
+ - We recommend using `conda` to set up the Python environment
+ - Download the Anaconda distribution specific to your operating system (we used Ubuntu) from [link](https://www.anaconda.com/download/success)
  - Open a terminal and execute the following commands to install Anaconda:
     - `wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh`
     - `bash Anaconda3-2024.10-1-Linux-x86_64.sh` 
  - Clone this repository and navigate to the project directory:
     - `git clone https://github.com/Arunprakash-A/Swin-T-TamilHCR`
     - `cd Swin-T-TamilHCR`
- - Create the environment using `environment.yml`. The default environment name is `.research`, but you can use different one if needed:
+ - Create the environment using `environment.yml`. The default environment name is `.research`, but you can use a different one if needed:
     - `conda env create -f environment.yml`
     - `conda env create -f environment.yml -n env_name`  # Replace <env_name> with a custom name
  - Activate the environment:
@@ -39,10 +39,19 @@ This repository contains all the necessary files to reproduce the results presen
 
 ## Loss curve
  - Batch size: 32
- - Gradient accumualtion steps: 4
+ - Gradient accumulation steps: 4
  - Optimizer: AdamW
  - Precision: Full precision (FP32)
  - <img src="images/loss.jpg" alt="loss_curve" width="700px">
+
+## Inference
+- Download the fine-tuned model weights from [here](https://drive.google.com/file/d/1X303mIpzBnnfT4v5dmya02e-3Qi5ej7X/view?usp=sharing)
+- Assuming the test image and the model are in the same directory of the _inference.py_ script
+- `python inference.py --image_path test_image.jpg --model_path Swin-Tiny/`
+- It outputs the prediction (class id) and the confidence
+- `Predicted class ID: 1
+     Predicted label: 001
+     Confidence: 0.9569`
 
 
 
