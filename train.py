@@ -57,14 +57,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--batch_size", 
         default=16,
-        type=int
+        type=int,
         help="Set the batch size based on available GPU memory"
     )
 
     parser.add_argument(
         "--num_train_epochs", 
         default=1,
-        type=int
+        type=int,
         help="Set the number of training epochs"
     )
     # Parse Arguments
